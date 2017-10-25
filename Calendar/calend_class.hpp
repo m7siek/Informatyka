@@ -22,10 +22,10 @@ public:
     Date(int y = 1970, int m = 1, int d = 1);
     Date(const Date &);
     Date operator+(int n) const;
-    Date operator+=(int n) const;
-    Date operator-=(int n) const;
+    Date operator+=(int n);
+    Date operator-=(int n);
     Date operator-(int n) const;
-    Date operator-(const Date & d) const;
+    int operator-(Date & d);
     bool operator==(const Date & d) const;
     bool operator!=(const Date & d) const;
     friend Date operator+(int n, Date & c) {return c+n;}
