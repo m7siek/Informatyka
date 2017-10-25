@@ -17,10 +17,13 @@ private:
     int year;
     int month;
     int day;
+    int convert();
 public:
     Date(int y = 1970, int m = 1, int d = 1);
     Date(const Date &);
     Date operator+(int n) const;
+    Date operator+=(int n) const;
+    Date operator-=(int n) const;
     Date operator-(int n) const;
     Date operator-(const Date & d) const;
     bool operator==(const Date & d) const;

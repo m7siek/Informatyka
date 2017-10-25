@@ -9,7 +9,9 @@
 #include "calend_class.hpp"
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::ostream;
+using std::endl;
 
 
 Date::Date(int y, int m, int d)
@@ -98,9 +100,67 @@ Date Date::operator-(int n) const
     result.day -= local_d;
     return result;
 }
-Date Date::operator-(const Date & d) const
+Date Date::operator+=(int n) const
 {
     
+    
+}
+Date Date::operator-=(int n) const
+{
+    
+}
+int Date::convert()
+{
+    int days_count;
+    int days_in_months;
+    switch (this->month) {
+        case 1:
+            days_in_months = 0;
+            break;
+        case 2:
+            days_in_months = 31;
+            break;
+        case 3:
+            days_in_months = 59;
+            break;
+        case 4:
+            days_in_months = 90;
+            break;
+        case 5:
+            days_in_months = 120;
+            break;
+        case 6:
+            days_in_months = 151;
+            break;
+        case 7:
+            days_in_months = 181;
+            break;
+        case 8:
+            days_in_months = 212;
+            break;
+        case 9:
+            days_in_months = 243;
+            break;
+        case 10:
+            days_in_months = 273;
+            break;
+        case 11:
+            days_in_months = 304;
+            break;
+        case 12:
+            days_in_months = 334;
+            break;
+    }
+    days_count = this->year*365+days_in_months+this->day;
+    return days_count;
+}
+Date Date::operator-(const Date & d) const
+{
+    Date result;
+    int local_years = d.year - 1970;
+    int local_months = d.month - 1;
+    int nr_of_days = d.day - 1 +local_years*365 +local_months*30;
+    return result;
 }
 bool Date::operator==(const Date & d) const
 {
