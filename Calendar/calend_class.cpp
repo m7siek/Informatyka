@@ -100,14 +100,14 @@ Date Date::operator-(int n) const
     result.day -= local_d;
     return result;
 }
-Date Date::operator+=(int n) const
+Date Date::operator+=(int n)
 {
-    
+    return *this = *this +n;
     
 }
-Date Date::operator-=(int n) const
+Date Date::operator-=(int n)
 {
-    
+    return *this = *this -n;
 }
 int Date::convert()
 {
@@ -154,12 +154,11 @@ int Date::convert()
     days_count = this->year*365+days_in_months+this->day;
     return days_count;
 }
-Date Date::operator-(const Date & d) const
+int Date::operator-(Date & d)
 {
-    Date result;
-    int local_years = d.year - 1970;
-    int local_months = d.month - 1;
-    int nr_of_days = d.day - 1 +local_years*365 +local_months*30;
+    int d1 = d.convert();
+    int d2 = this->convert();
+    int result = d2-d1;
     return result;
 }
 bool Date::operator==(const Date & d) const
