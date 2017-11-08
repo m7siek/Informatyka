@@ -33,8 +33,8 @@ int main()
         cout <<"Tak"<<endl;
     }else
         cout <<"Nie"<<endl;
-    cout<<"d4 += 5007\n"<<(d4+=5007)<<endl;
-    cout<<"d4 -= 5007\n"<<(d4-=5007)<<endl;
+    cout<<"d4 += 5008\n"<<(d4+=5007)<<endl;
+    cout<<"d4 -= 5008\n"<<(d4-=5007)<<endl;
 
     return 0;
 }
